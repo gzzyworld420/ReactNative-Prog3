@@ -1,30 +1,7 @@
 import app from 'firebase/app';
 import firebase from 'firebase';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {AntDesign} from '@expo/vector-icons'
-import Home from '../screens/Home';
-import Profile from '../screens/Profile';
 
-const Tab =  createBottomTabNavigator()
 
-export default function config(){
-    return (
-        <Tab.Navigator>
-
-            <Tab.Screen name="NewPost" component={NewPost} options={
-                {tabBarIcon: () => <AntDesign name="plus" size={24} color="violet"/>}
-            } />
-            <Tab.Screen name="Home" component={ Home } options={
-                {tabBarIcon: () => <AntDesign name="home" size={24} color="violet"/>}
-            } />
-            <Tab.Screen name="Profile" component={ Profile } options={
-                {tabBarIcon: () => <AntDesign name="profile" size={24} color="violet"/>}
-            } />
-
-        </Tab.Navigator>
-    )
-}
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
