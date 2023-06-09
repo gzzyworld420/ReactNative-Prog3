@@ -1,6 +1,8 @@
-import { Text, TextInput, StyleSheet } from 'react-native'
+import { Text, TextInput, StyleSheet, View } from 'react-native'
 import React, { Component } from 'react'
 import { auth } from '../firebase/config'
+import Home from '../screens/Home'
+import Profile from '../screens/Profile'
 
 
 class LoginForm extends Component {
@@ -23,13 +25,23 @@ logearUsuario(email, password){
   render() {
     return (
       <View>
-          <TextInput
+          {/* <TextInput
             placeholder='Email'
             keyboardType='email-address'
             onChangeText={(text)=> this.setState({email: text}) }
             value={this.state.email}
           />
+          <TextInput
+            placeholder='Password'
+            keyboardType='password'
+            secureTextEntry={true}
+            type='password'
+            onChangeText={(text)=> this.setState({password: text}) }
+            value={this.state.password}
+          /> */}
 
+          <Home {...this.props}/>
+          <Profile/>
       </View>
     )
   }

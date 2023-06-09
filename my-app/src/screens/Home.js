@@ -8,12 +8,45 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            posteos: [],
+            posteos: [
+                {
+                    id: '0',
+                    data:{
+                        owner: 'miguel',
+                        likes: 10,
+                        photo: 'https://i.imgur.com/NkMISEc.jpeg',
+                        comments: [
+                            {
+                                user: "jj",
+                                comment: "muy bueno"
+                            }
+                        ]
+                    }
+                    
+                },
+                {
+                    id: '0',
+                    data:{
+                        owner: 'benito',
+                        likes: 10,
+                        photo: 'https://i.imgur.com/NkMISEc.jpeg',
+                        comments: [
+                            {
+                                user: "jj",
+                                comment: "muy bueno"
+                            }
+                        ]
+                    }
+                    
+                }
+            ],
             loader: true
         }
     }
 
     componentDidMount() {
+
+        // TODO: birn posts from db
         db.collection('posts').orderBy('createdAt', 'desc').onSnapshot(docs => {
             let posts = [];
             docs.forEach(doc => {
@@ -27,13 +60,18 @@ class Home extends Component {
                 loader: false
             })
         })
+
+        this.setState({
+            ...this.state,
+            loader: false
+        })
     };
 
     render() {
         return (
             <View style={style.container}>
                 <Image
-                    style={style.image}
+                    style={style.logo}
                     source={logo}
                 />
                 {this.state.loader === true ?
@@ -45,7 +83,7 @@ class Home extends Component {
                         keyExtractor={item => item.id.toString()}
                         renderItem={({ item }) => <Card data={item} homeProps={this.props} />}
                     />
-                    
+
                 }
             </View>
         )
@@ -75,7 +113,11 @@ const style = StyleSheet.create({
     },
     flatList: {
         width: '100%'
-    }
+    },
+    logo: {
+        width: '50px',
+        height: '50px',
+    },
 })
 
 export default Home;
