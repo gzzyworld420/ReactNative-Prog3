@@ -26,7 +26,6 @@ class Register extends Component {
   render() {
     return (
  <View>
-
         <RegisterForm navigation={this.props.navigation}/>
  </View>
 

@@ -48,8 +48,6 @@ resgistrarUsuario(email, password, userName, bio){
     return (
 
     <View style={style.container}>
-      
-        <Text>Registrate aqui</Text>
 
         <TextInput style={style.field}
             keyboardType='email-address'
@@ -73,7 +71,7 @@ resgistrarUsuario(email, password, userName, bio){
             onChangeText={ text => this.setState({bio:text})}
             value={this.state.bio}
             />
-        
+
         {this.state.alert && (
                 <View>
                     <Text>El campo debe completarse</Text>
@@ -82,13 +80,14 @@ resgistrarUsuario(email, password, userName, bio){
 
         <TouchableOpacity style={style.button}
             onPress={() => this.resgistrarUsuario(this.state.email, this.state.password, this.state.bio) }>
-            <Text> Registrarme </Text>
+            <Text style={style.buttonText}> Registrarme </Text>
         </TouchableOpacity>
-        <Text style={style.button}>
-          <TouchableOpacity onPress={()=> this.props.navigation.navigate('Login')}>
-            <Text> Ya estoy registrado</Text>
+        
+          <TouchableOpacity style={style.button}
+            onPress={()=> this.props.navigation.navigate('Login')}>
+            <Text style={style.buttonText}> Ya estoy registrado </Text>
         </TouchableOpacity>
-        </Text>
+        
 
 
     </View>
@@ -101,21 +100,22 @@ const style = StyleSheet.create({
     container:{ 
  
      },
-    input:{
-        bortherWidth: 1,
-        borderColor: '#d3d3d3',
-    },
     field:{
+        bortherWidth: 2,
+        borderColor: 'black',
         backgroundColor: 'yellow',
         margin: '5px',
         padding: '5px'
     },
     button:{
-       margin: '10px',
-       borderStyle: 'solid',
-       borderWidth: 1,
-       borderColor: 'rgb(255,255,255)',
-    }
+       margin: '5px',
+       alignItems:'center',
+       backgroundColor: 'black',
+       padding: '5px'
+    },
 
+    buttonText:{
+        color: 'white',
+    }
     })
 export default RegisterForm
