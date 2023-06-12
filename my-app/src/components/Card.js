@@ -5,7 +5,7 @@ import firebase from "firebase";
 import { FontAwesome, AntDesign, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import Comment from "../screens/Comment";
 
-
+// test01 manu 
 class Card extends Component{
     constructor(props){
         super(props);
