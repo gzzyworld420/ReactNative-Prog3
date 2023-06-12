@@ -1,11 +1,13 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from './src/screens/Login';
-import Register from './src/screens/Register';
+import Login from './src/screens/Login.js';
+import Register from './src/screens/Register.js';
 import TabNavigation from './src/screens/TabNavigation';
 import Comment from './src/screens/Comment';
-import UsersProfile from './src/screens/UsersProfile';
-import RegisterAddPhoto from './src/screens/RegisterAddPhoto';
+import UsersProfile from './src/screens/UsersProfile.js';
+import RegisterAddPhoto from './src/screens/RegisterAddPhoto.js';
 
 
 export default function App() {
@@ -25,8 +27,6 @@ export default function App() {
       </NavigationContainer> 
     )
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
