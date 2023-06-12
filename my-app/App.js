@@ -18,14 +18,12 @@ export default function App() {
         <Stack.Navigator>
         <Stack.Screen name='Register' component={ Register }/>
         <Stack.Screen name='Login' component={ Login }/>
-<<<<<<< HEAD
-        <Stack.Screen name='HomeNavigation' component={ HomeNavigation }/>
-=======
+
         <Stack.Screen name='Comment' component={Comment} options={{headerShown: false}} />
         <Stack.Screen name='UsersProfile' component={UsersProfile} options={{headerShown: false}} />
         <Stack.Screen name='RegisterAddPhoto' component={RegisterAddPhoto} options={{headerShown: false}} />
         <Stack.Screen name='TabNavigation' component={TabNavigation} options={{headerShown: false}} />
->>>>>>> 14e2cad2aa7fe91d4d903320f1bdb9484c422626
+
         </Stack.Navigator>
     </NavigationContainer>
   );
