@@ -1,6 +1,6 @@
 import { React, Component } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList } from "react-native";
-import CardSearch from "../components/CardSearch";
+import CardSearch from '../components/CardSearch';
 import { db } from '../firebase/config';
 
 class Search extends Component {

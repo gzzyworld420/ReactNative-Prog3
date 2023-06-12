@@ -1,6 +1,6 @@
 import {React, Component} from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-import avatar from '../assets/avatar.png';
+import avatar from '../../assets/avatar.jpeg';
 
 class CardSearch extends Component{
     constructor(props){
