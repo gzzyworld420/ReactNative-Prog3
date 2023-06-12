@@ -17,7 +17,6 @@ class Card extends Component{
         }
     };
 
-
     componentDidMount() {
         if (this.props.data.data.likes.includes(auth.currentUser.email)) {
             this.setState({
