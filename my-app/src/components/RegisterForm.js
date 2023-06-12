@@ -87,7 +87,6 @@ resgistrarUsuario(email, password, userName, bio){
             onPress={()=> this.props.navigation.navigate('Login')}>
             <Text style={style.buttonText}> Ya estoy registrado </Text>
         </TouchableOpacity>
-        
 
 
     </View>
