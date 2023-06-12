@@ -25,19 +25,15 @@ logearUsuario(email, password){
   render() {
     return (
       <View>
-<<<<<<< HEAD
           <TextInput
             style={style.field}
-=======
-          {/* <TextInput
->>>>>>> 14e2cad2aa7fe91d4d903320f1bdb9484c422626
+
             placeholder='Email'
             keyboardType='email-address'
             onChangeText={(text)=> this.setState({email: text}) }
             value={this.state.email}
           />
           <TextInput
-<<<<<<< HEAD
             style={style.field}
             placeholder='Contraseña'
             secureTextEntry= {true}
@@ -55,15 +51,14 @@ logearUsuario(email, password){
                   <Text style={style.buttonText}>No estoy registrado</Text>
               </TouchableOpacity>
          
-=======
+        <TextInput
             placeholder='Password'
             keyboardType='password'
             secureTextEntry={true}
             type='password'
             onChangeText={(text)=> this.setState({password: text}) }
             value={this.state.password}
-          /> */}
->>>>>>> 14e2cad2aa7fe91d4d903320f1bdb9484c422626
+          />
 
           <Home {...this.props}/>
           <Profile/>
