@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './src/screens/Login.js';
 import Register from './src/screens/Register.js';
-import TabNavigation from './src/navigation/HomeNavigation.js';
+import TabNavigation from './src/screens/TabNavigation.js';
 import Comment from './src/screens/Comment.js';
 import UsersProfile from './src/screens/UsersProfile.js';
 import RegisterAddPhoto from './src/screens/RegisterAddPhoto.js';
