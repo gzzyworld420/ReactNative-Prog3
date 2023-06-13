@@ -5,7 +5,7 @@ import firebase from "firebase";
 import { FontAwesome, AntDesign, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import Comment from "../screens/Comment";
 
-// test01 manu 
+
 class Card extends Component{
     constructor(props){
         super(props);
@@ -17,18 +17,17 @@ class Card extends Component{
         }
     };
 
-
     componentDidMount() {
-        // if (this.props.data.data.likes.includes(auth.currentUser.email)) {
-        //     this.setState({
-        //         miLike: true
-        //     })
-        // } 
-        // if (auth.currentUser.email === this.props.data.data.owner){
-        //     this.setState({
-        //         owner: true
-        //     })
-        // }
+        if (this.props.data.data.likes.includes(auth.currentUser.email)) {
+            this.setState({
+                miLike: true
+            })
+        } 
+        if (auth.currentUser.email === this.props.data.data.owner){
+            this.setState({
+                owner: true
+            })
+        }
     }
 
     botonLike(){
@@ -86,9 +85,7 @@ class Card extends Component{
         return(
             <View style={style.cardContainer}>
                     <View style={style.flex}>
-                        <TouchableOpacity onPress={() => {
-                            debugger
-                            this.props.homeProps.navigation.navigate("Profile")}}>
+                        <TouchableOpacity onPress={() => this.props.homeProps.navigation.navigate('UsersProfile', { email: this.props.data.data.owner })}>
                             <Text style={style.creador}>{this.props.data.data.owner}</Text>
                         </TouchableOpacity>
                     
@@ -119,6 +116,7 @@ class Card extends Component{
                     <TouchableOpacity onPress={()=> this.props.homeProps.navigation.navigate('Comment', {id: this.props.data.id})}>
                         <Text style={style.contenido}>{this.props.data.data.comments.length} comentarios</Text>
                     </TouchableOpacity>
+                    
                 </View> 
         )
     }

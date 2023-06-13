@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native'
 import { auth, db } from '../firebase/config';
-import avatar from '../../assets/avatar.jpeg'
+import avatar from '../../assets/avatar.jpeg';
 import Card from '../components/Card';
 
 
@@ -9,68 +9,37 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userData: {
-              photo: '',
-              bio:'manu'
-            },
+            userData: {},
             props: props,
-            posteos: [
-              {
-                id: '0',
-                data:{
-                    photo: 'https://i.imgur.com/NkMISEc.jpeg',
-                    likes:[],
-                    comments: []
-                }
-                
-              },
-              {
-                id: '1',
-                data:{
-                    photo: 'https://i.imgur.com/NkMISEc.jpeg',
-                    likes:["romi"],
-                    comments: ["jd"]
-                }
-                
-              },
-              {
-                id: '2',
-                data:{
-                    photo: 'https://i.imgur.com/NkMISEc.jpeg',
-                    likes:[],
-                    comments: []
-                }
-                
-              },
-            ]
+            posteos: []
         }
     }
 
 
     componentDidMount() {
-        // db.collection('users').where('owner', '==', auth.currentUser.email).onSnapshot(
-        //     docs => {
-        //         docs.forEach(doc => {
-        //             this.setState({
-        //                 userData: doc.data()
-        //             })
-        //         })
-        //     })
+        db.collection('users').where('owner', '==', auth.currentUser.email).onSnapshot(
+            docs => {
+                docs.forEach(doc => {
+                    this.setState({
+                        userData: doc.data()
+                    })
+                })
+            })
 
-        // db.collection('posts').where('owner', '==', auth.currentUser.email).onSnapshot(
-        //     docs => {
-        //         let posts = [];
-        //         docs.forEach(doc => {
-        //             posts.push({
-        //                 id: doc.id,
-        //                 data: doc.data()
-        //             })
-        //         });
-        //         this.setState({
-        //             posteos: posts
-        //         })
-        //     }
-        // )
+        db.collection('posts').where('owner', '==', auth.currentUser.email).onSnapshot(
+            docs => {
+                let posts = [];
+                docs.forEach(doc => {
+                    posts.push({
+                        id: doc.id,
+                        data: doc.data()
+                    })
+                });
+                this.setState({
+                    posteos: posts
+                })
+            }
+        )
 
     }
 
